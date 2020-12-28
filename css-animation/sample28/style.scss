@@ -1,0 +1,54 @@
+$cWhite: white;
+$cBlack: black;
+
+#container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  perspective: 300px;
+  transform-style: preserve-3d;
+
+  &.cubic {
+
+    & span {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border: 1px solid $cBlack;
+      line-height: 48px;
+      text-align: center;
+      transition: all 0.3s;
+      transform-origin: center center -25px;
+
+      &.default {
+        background-color: $cWhite;
+        color: $cBlack;
+      }
+
+      &.hovering {
+        background-color: $cBlack;
+        color: $cWhite;
+        transform: rotateX(90deg);
+      }
+    }
+
+    &:hover {
+      & .default {
+        transform: rotateX(-90deg);
+      }
+      & .hovering {
+        transform: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+$cBlack: black;
+$cWhite: white;
+
+
+.three-dot-spinner {
+  text-align: center;
+  margin-top: 50px;
+
+  & div {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: $cBlack;
+    border-radius: 50%;
+    animation: kf-loading 1.4s infinite;
+
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        animation-delay: -0.32s / $i;
+      }
+    }
+  }
+}
+
+@keyframes kf-loading {
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

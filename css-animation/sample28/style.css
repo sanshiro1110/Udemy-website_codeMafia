@@ -1,0 +1,55 @@
+#container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  -webkit-perspective: 300px;
+          perspective: 300px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.btn.cubic span {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  line-height: 48px;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform-origin: center center -25px;
+          transform-origin: center center -25px;
+}
+
+.btn.cubic span.default {
+  background-color: white;
+  color: black;
+}
+
+.btn.cubic span.hovering {
+  background-color: black;
+  color: white;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}
+
+.btn.cubic:hover .default {
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+
+.btn.cubic:hover .hovering {
+  -webkit-transform: none;
+          transform: none;
+}
+/*# sourceMappingURL=style.css.map */
